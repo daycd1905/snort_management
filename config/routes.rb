@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # root to: 'hello_world#index'
 
   namespace :admin do
-    
+    resources :users
   end
 
   get '/', to: 'admin/dashboards#dashboard'

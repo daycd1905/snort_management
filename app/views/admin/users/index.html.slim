@@ -1,0 +1,27 @@
+.content
+  .row
+    .col-md-5
+      h3 Users
+      h5
+        a href=admin_users_path Users
+        |&nbsp;/&nbsp;All
+
+    .col-md-7
+      .form-inline.text-right style='padding-top: 25px;'
+        .input-group
+          input.form-control#filter-query type='text' value=params[:filter_query] placeholder='Search'
+          .input-group-addon.btn.btn-default onclick='applyFilters()'
+            i.fa.fa-search
+        | &emsp;
+        a.btn.btn-default href='#'
+          i.fa.fa-file-excel-o
+        | &emsp;
+        a.btn.btn-default href='#'
+          i.fa.fa-file-pdf-o
+
+  = render 'filters'
+
+  - unless Rails.env.production?
+    .row
+      .col-md-12
+        = link_to 'Sync Users', sync_users_admin_sync_path, remote: true

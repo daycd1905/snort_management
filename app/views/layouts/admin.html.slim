@@ -9,7 +9,12 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = yield
+    .main-wrapper
+      = render partial: "layouts/default/header"
+      = render partial: "layouts/default/sidebar"
+
+      .content-wrapper
+        = yield
 
     - if content_for?(:javascript_inline)
       = yield(:javascript_inline)

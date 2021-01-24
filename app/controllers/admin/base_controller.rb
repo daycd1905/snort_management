@@ -4,6 +4,6 @@ module Admin
     before_action :authenticate_user!
 
     respond_to :html
-    layout 'application'
+    layout 'admin'
   end
 end

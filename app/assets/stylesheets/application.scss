@@ -11,24 +11,91 @@
  * It is generally better to create a new file per style scope.
  *
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ 
+ .row {
+   margin: 0px;
+ }
+ .navbar {
+   background-color: #16a085;
+   margin: 0px;
+ }
+ .navbar-header {
+   padding-left: 30px;
+ }
+ .navbar h3 {
+   color: white
+ }
+ .user-menu h4 {
+   color: white;
+ }
+ .nav > li > a:hover {
+   background-color: black;
+ }
 
-.row {
-  margin: 0px;
+
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
-.navbar {
-  background-color: #16a085;
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
 }
-.navbar-header {
-  padding-left: 30px;
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
 }
-.navbar h3 {
-  color: white
+
+/* Main content */
+.content-wrapper {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
 }
-.user-menu h4 {
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
   color: white;
 }
-.nav > li > a:hover {
-  background-color: black;
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }

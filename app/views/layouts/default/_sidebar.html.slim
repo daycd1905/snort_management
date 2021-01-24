@@ -1,0 +1,26 @@
+.sidenav
+  a href="#dashboards"  Dashboard
+  a href="#rules"  Rules
+  a href="#logs"  Logs
+  button.dropdown-btn
+    | Admin
+    i.fa.fa-caret-down
+  .dropdown-container
+    a href="#" Users
+    a href="#" Roles
+
+javascript:
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+  
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+    } else {
+    dropdownContent.style.display = "block";
+    }
+    });
+  }

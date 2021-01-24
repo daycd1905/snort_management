@@ -1,0 +1,31 @@
+.navbar role="navigation"
+  .container-fluid
+    .row
+      .col-sm-2
+        .navbar-header
+          button.navbar-toggle data-target=".sidebar-collapse" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          
+      .col-sm-10
+        ul.nav.navbar-nav
+          li
+            span.site-title
+              = t('header.management_portal')
+        ul.nav.navbar-nav.navbar-right.user-menu
+          li
+            a.avatar
+              span.profile-pic
+                / = image_tag 
+              span.profile-name
+                = session[:username]
+          li.dropdown
+            a.dropdown-toggle.logout-btn data-toggle="dropdown" href="#"
+              / = image_tag "ui/icon-lock.svg", size: "20"
+            ul.dropdown-menu
+              li
+                = link_to destroy_user_session_path, method: :delete
+                  i.fa.fa-sign-out aria-hidden="true"
+                  span= t("helpers.text.sign_out")

@@ -2,9 +2,6 @@
   .row
     .col-md-5
       h3 Users
-      h5
-        a href=admin_users_path Users
-        |&nbsp;/&nbsp;All
 
     .col-md-7
       .form-inline.text-right style='padding-top: 25px;'
@@ -12,16 +9,35 @@
           input.form-control#filter-query type='text' value=params[:filter_query] placeholder='Search'
           .input-group-addon.btn.btn-default onclick='applyFilters()'
             i.fa.fa-search
-        | &emsp;
-        a.btn.btn-default href='#'
-          i.fa.fa-file-excel-o
-        | &emsp;
-        a.btn.btn-default href='#'
-          i.fa.fa-file-pdf-o
+        
+  .row
+    .col-md-12
+      .card.card-accent-primary
+        .card-body
+          = link_to('New', new_admin_user_path)
 
-  = render 'filters'
+  .row
+    .col-md-12
+      .table-responsive
+        table.table.talbe-striped.no-wrap
+          thead
+            tr
+              th= User.human_attribute_name(:index)
+              th= User.human_attribute_name(:id)
+              th= User.human_attribute_name(:name)
+              th= User.human_attribute_name(:email)
+              th= User.human_attribute_name(:sign_in_count)
+              th= User.human_attribute_name(:last_sign_in_at)
+              th= User.human_attribute_name(:last_sign_in_ip)
 
-  - unless Rails.env.production?
-    .row
-      .col-md-12
-        = link_to 'Sync Users', sync_users_admin_sync_path, remote: true
+          tbody
+            - @users.each_with_index do |user, index|
+              tr
+                td= index + 1
+                td= user.id
+                td= user.try(:name)
+                td= user.email
+                td= user.sign_in_count
+                td= user.last_sign_in_at
+                td= user.last_sign_in_ip
+            

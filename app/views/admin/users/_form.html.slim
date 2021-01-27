@@ -1,0 +1,14 @@
+= simple_form_for [:admin, @user] do |f|
+  card.card-accent-primary
+    .card-body
+      .row
+        .col-sm-6
+          = f.input :email
+        .col-sm-6
+          = f.input :password
+        .col-sm-6
+          = f.input :password_confirmation
+
+  = f.button :submit, :class => 'btn-primary'
+
+  = link_to('Cancel', admin_users_path)

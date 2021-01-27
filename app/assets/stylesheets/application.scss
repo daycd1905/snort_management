@@ -99,3 +99,25 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+
+/*Start Table Css*/
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.talbe-striped {
+  tbody {
+    tr {
+      &:nth-of-type(odd) {
+        background-color: #efefef;
+      }
+
+      &:nth-of-type(even) {
+        background-color: #FFFFFF;
+      }
+    }
+  }
+}
+/*End Table Css*/

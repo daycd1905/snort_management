@@ -7,6 +7,7 @@ gem 'rails', '~> 6.1.1'
 gem 'pg'
 gem 'puma', '~> 5.0'
 gem 'bootstrap-sass'
+gem 'bootstrap'
 gem 'sass-rails', '>= 6'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
@@ -27,6 +28,9 @@ gem 'devise'
 gem 'slim-rails'
 gem 'simple_form'
 gem 'nested_form_fields'
+
+# Debug
+gem 'pry-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

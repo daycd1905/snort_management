@@ -1,26 +1,33 @@
-.sidenav
-  a href="#dashboards"  Dashboard
-  a href="#rules"  Rules
-  a href="#logs"  Logs
-  button.dropdown-btn
-    | Admin
-    i.fa.fa-caret-down
-  .dropdown-container
-    = link_to('Users', admin_users_path)
-    a href="#" Roles
+aside.main-sidebar.sidebar-dark-primary.elevation-4
+  /! Brand Logo
+  a.brand-link href="index3.html" 
+    span.brand-text.font-weight-light IAT401
+  /! Sidebar
+  .sidebar
+    nav.mt-2
+      ul.nav.nav-pills.nav-sidebar.flex-column data-accordion="false" data-widget="treeview" role="menu" 
+        li.nav-item
+          a.nav-link.active href="#" 
+            i.nav-icon.fas.fa-tachometer-alt
+            p
+              | Dashboard
+          
+        li.nav-item
+          a.nav-link href="#" 
+            i.nav-icon.fas.fa-th
+            p
+              | Admin
+            i.right.fas.fa-angle-left
 
-javascript:
-  var dropdown = document.getElementsByClassName("dropdown-btn");
-  var i;
-  
-  for (i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-    dropdownContent.style.display = "none";
-    } else {
-    dropdownContent.style.display = "block";
-    }
-    });
-  }
+          ul.nav.nav-treeview
+            li.nav-item
+              = link_to admin_users_path, :class => "nav-link"
+                i.far.fa-circle.nav-icon
+                p Users
+            li.nav-item
+              a.nav-link href="#" 
+                i.far.fa-circle.nav-icon
+                p Roles
+            
+    /! /.sidebar-menu
+  /! /.sidebar

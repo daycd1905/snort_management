@@ -1,19 +1,8 @@
-.navbar role="navigation"
-  .container-fluid
-    .row
-      .col-sm-2
-        .navbar-header
-          h2 IAT491        
-      .col-sm-10
-        ul.nav.navbar-nav
-          li
-            span.site-title
-            h3 SNORT - Management Portal
-        ul.nav.navbar-nav.navbar-right.user-menu
-          li
-            span.profile-name
-              / - user = User.find_by(id: session["warden.user.user.key"][0].first).email
-              / = 1
-          li           
-            = link_to destroy_user_session_path, method: :delete
-              h4 Sign Out
+nav.main-header.navbar.navbar-expand.navbar-white.navbar-light
+  ul.navbar-nav
+    li.nav-item
+      a.nav-link data-widget="pushmenu" href="#" role="button" 
+        i.fas.fa-bars
+    li.nav-item
+      = link_to destroy_user_session_path, method: :delete
+        h4 Sign Out

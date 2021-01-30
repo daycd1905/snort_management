@@ -16,12 +16,12 @@
     .col-md-12
       .card.card-accent-primary
         .card-body
-          = link_to('New', new_admin_user_path)
+          = link_to "New", new_admin_user_path, :class => "btn btn-primary"
 
   .row
     .col-md-12
       .table-responsive
-        table.table.talbe-striped.no-wrap
+        table.table.table-striped.no-wrap
           thead
             tr
               th= User.human_attribute_name(:index)

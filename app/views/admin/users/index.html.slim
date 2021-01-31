@@ -26,20 +26,22 @@
             tr
               th= User.human_attribute_name(:index)
               th= User.human_attribute_name(:id)
+              th= User.human_attribute_name(:username)
               th= User.human_attribute_name(:name)
               th= User.human_attribute_name(:email)
-              th= User.human_attribute_name(:sign_in_count)
-              th= User.human_attribute_name(:last_sign_in_at)
+              th= User.human_attribute_name(:phone)
               th= User.human_attribute_name(:last_sign_in_ip)
+              th= User.human_attribute_name(:created_at)
 
           tbody
             - @users.each_with_index do |user, index|
               tr
                 td= index + 1
                 td= user.id
-                td= user.try(:name)
+                td= link_to user.username, admin_user_path(user.id), target: :_blank
+                td= user.name
                 td= user.email
-                td= user.sign_in_count
-                td= user.last_sign_in_at
+                td= user.phone
                 td= user.last_sign_in_ip
+                td= user.created_at
             

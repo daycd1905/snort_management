@@ -28,6 +28,7 @@ gem 'devise'
 gem 'slim-rails'
 gem 'simple_form'
 gem 'nested_form_fields'
+gem 'cancancan'
 
 # Debug
 gem 'pry-rails'

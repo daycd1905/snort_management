@@ -15,6 +15,7 @@ html
 
       .content-wrapper
         = yield
+    = render partial: "/layouts/default/messages"
 
     - if content_for?(:javascript_inline)
       = yield(:javascript_inline)
